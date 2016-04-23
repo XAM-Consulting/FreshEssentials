@@ -38,6 +38,9 @@
     <Compile Include="AttachedProperties\EntryCompletedAttached.cs" />
     <Compile Include="Controls\AdvancedFrame.cs" />
     <Compile Include="Controls\BindablePicker.cs" />
+    <Compile Include="Controls\AccessorizedTextCell.cs" />
+    <Compile Include="Controls\AccessorizedImageCell.cs" />
+    <Compile Include="Controls\AccessorizedCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
