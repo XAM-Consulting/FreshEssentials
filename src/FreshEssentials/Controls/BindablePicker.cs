@@ -7,28 +7,35 @@ using System.Linq;
 
 namespace FreshEssentials
 {
-    public class BindablePicker: Picker
+    public class BindablePicker : Picker
     {
         public BindablePicker()
         {
             base.SelectedIndexChanged += OnSelectedIndexChanged;
         }
 
-        public static readonly BindableProperty CanHaveAllProperty = BindableProperty.Create<BindablePicker, bool>(p => p.CanHaveAll, false);
-
+        public static readonly BindableProperty CanHaveAllProperty =
+              BindableProperty.Create("CanHaveAll", typeof(bool), typeof(BindablePicker),
+                  defaultValue: false,
+                  defaultBindingMode: BindingMode.TwoWay);
         public bool CanHaveAll
         {
             get { return (bool)GetValue(CanHaveAllProperty); }
             set { SetValue(CanHaveAllProperty, value); }
         }
 
-        public static readonly BindableProperty AllTitleProperty = BindableProperty.Create<BindablePicker, string>(p => p.AllTitle, default(string));
 
+
+        public static readonly BindableProperty AllTitleProperty =
+        BindableProperty.Create("AllTitle", typeof(string), typeof(BindablePicker),
+            defaultValue: default(string),
+            defaultBindingMode: BindingMode.TwoWay);
         public string AllTitle
         {
             get { return (string)GetValue(AllTitleProperty); }
             set { SetValue(AllTitleProperty, value); }
         }
+
 
         public static readonly BindableProperty SelectedItemProperty = BindableProperty.Create("SelectedItem", typeof(object), typeof(BindablePicker), null, BindingMode.TwoWay, null, new BindableProperty.BindingPropertyChangedDelegate(BindablePicker.OnSelectedItemChanged), null, null, null);
         public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create("ItemsSource", typeof(IEnumerable), typeof(BindablePicker), null, BindingMode.OneWay, null, new BindableProperty.BindingPropertyChangedDelegate(BindablePicker.OnItemsSourceChanged), null, null, null);
@@ -71,7 +78,7 @@ namespace FreshEssentials
             }
             else if (CanHaveAll && SelectedIndex == 0)
             {
-                this.SelectedItem = null;    
+                this.SelectedItem = null;
             }
             else
             {
