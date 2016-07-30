@@ -12,32 +12,40 @@ namespace FreshEssentials
 
     public class SegmentedButtonGroup : Grid
     {
-        public static readonly BindableProperty OnColorProperty = BindableProperty.Create<SegmentedButtonGroup, Color>(p => p.OnColor, Color.Blue);
-
+        public static readonly BindableProperty OnColorProperty =
+          BindableProperty.Create("OnColor", typeof(Color), typeof(SegmentedButton),
+              defaultValue: Color.Black,
+              defaultBindingMode: BindingMode.TwoWay);
         public Color OnColor
         {
             get { return (Color)GetValue(OnColorProperty); }
             set { SetValue(OnColorProperty, value); }
         }
 
-        public static readonly BindableProperty OffColorProperty = BindableProperty.Create<SegmentedButtonGroup, Color>(p => p.OffColor, Color.White);
-
+        public static readonly BindableProperty OffColorProperty =
+           BindableProperty.Create("OffColor", typeof(Color), typeof(SegmentedButton),
+               defaultValue: Color.White,
+               defaultBindingMode: BindingMode.TwoWay);
         public Color OffColor
         {
             get { return (Color)GetValue(OffColorProperty); }
             set { SetValue(OffColorProperty, value); }
         }
 
-        public static readonly BindableProperty CommandProperty = BindableProperty.Create<SegmentedButtonGroup, Command>(p => p.Command, default(Command));
-
+        public static readonly BindableProperty CommandProperty =
+            BindableProperty.Create("Command", typeof(Command), typeof(SegmentedButton),
+                defaultValue: default(Command),
+                defaultBindingMode: BindingMode.TwoWay);
         public Command Command
         {
             get { return (Command)GetValue(CommandProperty); }
             set { SetValue(CommandProperty, value); }
         }
 
-        public static readonly BindableProperty CornerRadiusProperty = BindableProperty.Create<SegmentedButtonGroup, int>(p => p.CornerRadius, 0);
-
+        public static readonly BindableProperty CornerRadiusProperty =
+        BindableProperty.Create("CornerRadius", typeof(int), typeof(SegmentedButton),
+            defaultValue: 0,
+            defaultBindingMode: BindingMode.TwoWay);
         public int CornerRadius
         {
             get { return (int)GetValue(CornerRadiusProperty); }
