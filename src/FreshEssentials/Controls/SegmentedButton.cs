@@ -140,6 +140,7 @@ namespace FreshEssentials
                 frame.OutlineColor = OnColor;
                 frame.Content = label;
                 frame.HorizontalOptions = LayoutOptions.FillAndExpand;
+                frame.VerticalOptions = LayoutOptions.FillAndExpand;
 
                 if (i == SelectedIndex)
                 {

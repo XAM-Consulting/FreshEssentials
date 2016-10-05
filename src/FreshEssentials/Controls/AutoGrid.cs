@@ -71,7 +71,6 @@ namespace FreshEssentials
             }
 
             bindable.SetValue(ColumnProperty, ColumnNumber);
-            //System.Diagnostics.Debug.WriteLine("AutoGrid set colum is " + ColumnNumber);
         }
 
         public static void OnAutoRowChanged(BindableObject bindable, object oldValue, object newValue)
@@ -89,7 +88,6 @@ namespace FreshEssentials
             }
 
             bindable.SetValue(RowProperty, RowNumber);
-            //System.Diagnostics.Debug.WriteLine("AutoGrid set row is " + RowNumber);
         }
     }
 }
