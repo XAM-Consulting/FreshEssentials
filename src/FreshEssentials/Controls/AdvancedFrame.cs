@@ -27,14 +27,8 @@ namespace FreshEssentials
 
         public AdvancedFrame()
         {       
-            BackgroundColor = Color.Transparent;
-            HorizontalOptions = LayoutOptions.Start;
-            WidthRequest = 100;
             HasShadow = false;
-            OutlineColor = Color.Transparent;
             Corners = RoundedCorners.none;
-            CornerRadius = 30;
-            HeightRequest = 2 * CornerRadius;
             this.Padding = new Thickness(0, 0, 0, 0);
         }
     }

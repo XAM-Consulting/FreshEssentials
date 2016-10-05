@@ -39,7 +39,7 @@ namespace FreshEssentials.Droid
             float top = this.PivotY - h / 2; 
             float right = left + Width; 
             float bottom = top + h; 
-            float r = myFrame.CornerRadius;
+            float r = Forms.Context.ToPixels(myFrame.CornerRadius);
             Path path = new Path (); 
 
             switch (myFrame.Corners) {
