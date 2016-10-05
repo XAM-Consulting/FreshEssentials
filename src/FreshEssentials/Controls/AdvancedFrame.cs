@@ -27,6 +27,7 @@ namespace FreshEssentials
 
         public AdvancedFrame()
         {       
+            BackgroundColor = Color.Transparent;
             HasShadow = false;
             Corners = RoundedCorners.none;
             this.Padding = new Thickness(0, 0, 0, 0);
