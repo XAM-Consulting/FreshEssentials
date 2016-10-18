@@ -28,12 +28,12 @@ namespace FreshEssentials
 
         public static object GetCommandParameter(BindableObject bindable)
         {
-            return (object)bindable.GetValue(CommandProperty);
+            return (object)bindable.GetValue(CommandParameterProperty);
         }
 
         public static void SetCommandParameter(BindableObject bindable, object value)
         {
-            bindable.SetValue(CommandProperty, value);
+            bindable.SetValue(CommandParameterProperty, value);
         }
 
         public static ICommand GetCommand(BindableObject bindable)
