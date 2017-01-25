@@ -58,13 +58,7 @@ namespace FreshEssentials
             set { SetValue(SelectedIndexProperty, value); }
         }
 
-        public static readonly BindableProperty FontSizeProperty = BindableProperty.Create("FontSize", typeof(string), typeof(SegmentedButtonGroup), "Small");
-
-        public string FontSize
-        {
-            get { return (string)GetValue(FontSizeProperty); }
-            set { SetValue(FontSizeProperty, value); }
-        }
+        public Style LabelStyle { get; set; }
 
         public SegmentedButtonGroup()
         {
@@ -106,23 +100,10 @@ namespace FreshEssentials
             {
                 var buttonSeg = SegmentedButtons[i];
 
-                double fontSize;    // local variable to save the interpreted font size
-                try
-                {
-                    // convert the normal names first
-                    fontSize = Device.GetNamedSize((NamedSize)Enum.Parse(typeof(NamedSize), FontSize, true), typeof(Label));
-                }
-                catch (Exception)
-                {
-                    // convert as a double and default if there is a problem
-                    if(double.TryParse(FontSize, out fontSize) == false)
-                        fontSize = Device.GetNamedSize(NamedSize.Default, typeof(Label));
-                }
-
                 var label = new Label
                 { 
                     Text = buttonSeg.Title, 
-                    FontSize = fontSize, 
+                    Style = LabelStyle,
                     HorizontalTextAlignment = TextAlignment.Center, 
                     VerticalTextAlignment = TextAlignment.Center 
                 };
