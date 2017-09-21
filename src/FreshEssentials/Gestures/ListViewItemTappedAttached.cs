@@ -28,10 +28,15 @@ namespace FreshEssentials
         }
 
         public static void OnItemTappedChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            var control = bindable as ListView;
-            if (control != null)
-                control.ItemTapped += OnItemTapped;
+        {			
+            if (!(bindable is ListView listView))
+                return;
+
+            if (oldValue != null)
+                listView.ItemTapped -= OnItemTapped;
+
+            if (newValue != null)
+                listView.ItemTapped += OnItemTapped;
         }
 
         private static void OnItemTapped(object sender, ItemTappedEventArgs e)
