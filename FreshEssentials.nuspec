@@ -65,5 +65,7 @@ Attached Properties
         <file src="src\Droid\bin\Release\FreshEssentials*.*" target="lib\MonoAndroid10" />
 
         <file src="src\UWP\bin\Release\FreshEssentials*.*" target="lib\uap10.0" />
+
+        <file src="src\WinRT\bin\Release\FreshEssentials*.*" target="lib\win81" />
     </files>
 </package>
