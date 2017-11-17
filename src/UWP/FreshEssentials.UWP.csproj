@@ -113,7 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FreshEssentials\FreshEssentials.csproj">
-      <Project>{99d84c84-d9ff-49aa-8af0-3d7fd4e5c616}</Project>
+      <Project>{66f88db5-b0fd-4e20-bcf2-fdbd8dc5c346}</Project>
       <Name>FreshEssentials</Name>
     </ProjectReference>
   </ItemGroup>
