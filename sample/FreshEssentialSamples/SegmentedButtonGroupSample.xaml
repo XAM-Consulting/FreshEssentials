@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FreshEssentialSamples.SegmentedButtonGroupSample"
+	xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials">
+    <ContentPage.Content>
+    	<StackLayout Spacing="10">
+    		<fe:SegmentedButtonGroup OnColor="Blue" OffColor="White" SelectedIndex="{Binding SelectIndex, Mode=TwoWay}" CornerRadius="5" HeightRequest="50" >
+				<fe:SegmentedButtonGroup.LabelStyle>
+					<Style TargetType="Label">
+					    <Setter Property="FontSize" Value="12" />
+						<Setter Property="FontAttributes" Value="Bold" />
+					</Style>
+				</fe:SegmentedButtonGroup.LabelStyle>
+    			<fe:SegmentedButtonGroup.SegmentedButtons>
+    				<fe:SegmentedButton Title="Button 1" />
+    				<fe:SegmentedButton Title="Button 2"/>
+    				<fe:SegmentedButton Title="Button 3"/>
+    			</fe:SegmentedButtonGroup.SegmentedButtons>
+    		</fe:SegmentedButtonGroup>
+
+    		<Label Text="{Binding SelectIndex, StringFormat='You select {0} button'}" HorizontalTextAlignment="Center"/>
+    	</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

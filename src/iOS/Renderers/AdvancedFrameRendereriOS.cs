@@ -8,13 +8,16 @@ using UIKit;
 [assembly: ExportRenderer(typeof(AdvancedFrame), typeof(FreshEssentials.iOS.AdvancedFrameRendereriOS))]
 namespace FreshEssentials.iOS
 {
-    public class AdvancedFrameRendereriOS : VisualElementRenderer<AdvancedFrame>
+    public class AdvancedFrameRendereriOS : FrameRenderer
     {
         protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (e.PropertyName == "InnerBackground" || e.PropertyName == "OutlineColor")
+            if (e.PropertyName == AdvancedFrame.InnerBackgroundProperty.PropertyName
+                || e.PropertyName == AdvancedFrame.OutlineColorProperty.PropertyName
+                || e.PropertyName == AdvancedFrame.CornerRadiusProperty.PropertyName
+                || e.PropertyName == AdvancedFrame.CornersProperty.PropertyName)
             {
                 this.SetNeedsDisplay();
             }
@@ -24,30 +27,29 @@ namespace FreshEssentials.iOS
         {            
             CoreGraphics.CGRect r;  
 
-            int CornerRadius = Element.CornerRadius;
-            SizeF radius = new SizeF((float)CornerRadius, (float)CornerRadius);
+            SizeF radius = new SizeF((float)Element.CornerRadius, (float)Element.CornerRadius);
 
             UIBezierPath path;
             switch (Element.Corners)
             {
-                case RoundedCorners.left:
+                case RoundedCorners.Left:
                     r = new CoreGraphics.CGRect(rect.X + 4,
                         rect.Y + 2, rect.Width - 4, rect.Height - 4);
                     path = UIBezierPath.FromRoundedRect(r, 
                         (UIRectCorner.TopLeft | UIRectCorner.BottomLeft), radius);
                     break;
-                case RoundedCorners.right:
+                case RoundedCorners.Right:
                     r = new CoreGraphics.CGRect(rect.X,
                         rect.Y + 2, rect.Width - 4, rect.Height - 4);
                     path = UIBezierPath.FromRoundedRect(r, 
                         (UIRectCorner.TopRight | UIRectCorner.BottomRight), radius);
                     break;
-                case RoundedCorners.all:
+                case RoundedCorners.All:
                     r = new CoreGraphics.CGRect(rect.X + 2,
                         rect.Y + 2, rect.Width - 4, rect.Height - 4);
                     path = UIBezierPath.FromRoundedRect(r, radius.Width);
                     break;
-                case RoundedCorners.none:
+                case RoundedCorners.None:
                     r = new CoreGraphics.CGRect(rect.X,
                         rect.Y + 2, rect.Width, rect.Height - 4);
                     path = UIBezierPath.FromRoundedRect(r, (float)0.0);                    

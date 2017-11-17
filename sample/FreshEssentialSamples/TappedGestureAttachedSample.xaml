@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FreshEssentialSamples.TappedGestureAttachedSample"
+	xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials">
+    <ContentPage.Content>
+    	<StackLayout>
+    		<Label Text="Click the image" HorizontalTextAlignment="Center" />
+    		<Image Source="xamconsulting.png" Aspect="AspectFit" fe:TappedGestureAttached.Command="{Binding ImageTappedCommnad}" />
+    		<Label Text="{Binding DisplayText}" HorizontalTextAlignment="Center" />
+    	</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

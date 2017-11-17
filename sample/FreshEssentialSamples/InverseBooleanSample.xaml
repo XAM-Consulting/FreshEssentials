@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FreshEssentialSamples.InverseBooleanSample"
+	xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			 <fe:InverseBooleanConverter x:Key="InverseConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="60" />
+				<RowDefinition Height="60" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label Text="Click the button" HorizontalTextAlignment="Center" Grid.ColumnSpan="2" />
+			<Button Text="Click Me" Command="{Binding InverseCommand}" IsVisible="{Binding ShowButton}" Grid.Row="1" BorderWidth="1"/>
+			<Button Text="Click Me" Command="{Binding InverseCommand}" IsVisible="{Binding ShowButton, Converter={StaticResource InverseConverter}}" Grid.Row="1" Grid.Column="1" BorderWidth="1"/>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

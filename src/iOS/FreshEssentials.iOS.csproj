@@ -10,7 +10,6 @@
     <RootNamespace>FreshEssentials.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>FreshEssentials.iOS</AssemblyName>
-    <ReleaseVersion>1.1.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -63,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FreshEssentials\FreshEssentials.csproj">
-      <Project>{66f88db5-b0fd-4e20-bcf2-fdbd8dc5c346}</Project>
+      <Project>{B9C8BAFC-0132-4039-87D1-F91B4F7D3E23}</Project>
       <Name>FreshEssentials</Name>
     </ProjectReference>
   </ItemGroup>

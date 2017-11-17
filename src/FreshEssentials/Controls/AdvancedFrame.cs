@@ -5,13 +5,13 @@ namespace FreshEssentials
 {
     public enum RoundedCorners
     {
-        left,
-        right,
-        all,
-        none
+        None,
+        Left,
+        Right,
+        All
     }
 
-    public class AdvancedFrame: Frame
+    public class AdvancedFrame : Frame
     {
         public static readonly BindableProperty InnerBackgroundProperty = BindableProperty.Create("InnerBackground", typeof(Color), typeof(AdvancedFrame), default(Color));
 
@@ -21,15 +21,17 @@ namespace FreshEssentials
             set { SetValue(InnerBackgroundProperty, value); }
         }
 
-        public RoundedCorners Corners { get; set; }
-
-        public int CornerRadius { get; set; }
+        public static readonly BindableProperty CornersProperty = BindableProperty.Create("Corners", typeof(RoundedCorners), typeof(AdvancedFrame), RoundedCorners.None);
+        public RoundedCorners Corners
+        {
+            get { return (RoundedCorners)GetValue(CornersProperty); }
+            set { SetValue(CornersProperty, value); }
+        }
 
         public AdvancedFrame()
-        {       
+        {
             BackgroundColor = Color.Transparent;
             HasShadow = false;
-            Corners = RoundedCorners.none;
             this.Padding = new Thickness(0, 0, 0, 0);
         }
     }

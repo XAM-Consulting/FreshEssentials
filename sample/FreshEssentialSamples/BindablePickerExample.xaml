@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FreshEssentialSamples.BindablePickerExample"
+    xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials" >
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label Text="Please select car make" HorizontalTextAlignment="Center" />
+            <fe:BindablePicker ItemsSource="{Binding CarList}" SelectedItem="{Binding SelectedCar}" DisplayProperty="MakeAndModel" Title="Select..."></fe:BindablePicker>    
+			<Button Text="Change Source of Picker" Command="{Binding ChangeSource}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

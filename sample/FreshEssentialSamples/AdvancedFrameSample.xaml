@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FreshEssentialSamples.AdvancedFrameSample" 
+	xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials">
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="Center">
+			<fe:AdvancedFrame x:Name="LeftFrame" Corners="Left" CornerRadius="10" OutlineColor="Red" HorizontalOptions="Center" WidthRequest="200">
+				<Label Text="Corners is left CornerRadius is 10" />
+			</fe:AdvancedFrame>
+			<fe:AdvancedFrame Corners="Right" CornerRadius="20" OutlineColor="Red" HorizontalOptions="Center" WidthRequest="200">
+				<Label Text="Corners is right CornerRadius is 20" />
+			</fe:AdvancedFrame>
+			<fe:AdvancedFrame Corners="All" CornerRadius="30" OutlineColor="Red" HorizontalOptions="Center" WidthRequest="200">
+				<Label Text="Corners is All CornerRadius is 30" />
+			</fe:AdvancedFrame>
+			<fe:AdvancedFrame Corners="None" InnerBackground="Blue" OutlineColor="Red" HorizontalOptions="Center"  WidthRequest="200">
+				<Label Text="Corners is none InnerBackground is Blue" TextColor="White"/>
+			</fe:AdvancedFrame>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

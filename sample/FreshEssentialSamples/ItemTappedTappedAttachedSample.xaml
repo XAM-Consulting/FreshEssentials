@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FreshEssentialSamples.ItemTappedTappedAttachedSample"
+	xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label Text="Please select car make" />
+            <ListView ItemsSource="{Binding MyCars}" fe:ListViewItemTappedAttached.Command="{Binding ItemTapCommand}" HeightRequest="100">
+            	<ListView.ItemTemplate>
+            		<DataTemplate>
+            			<TextCell Text="{Binding MakeAndModel}" />
+            		</DataTemplate>
+            	</ListView.ItemTemplate>
+            </ListView>
+            <Label Text="{Binding DisplayText}" HorizontalTextAlignment="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

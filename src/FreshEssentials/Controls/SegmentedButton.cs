@@ -111,11 +111,11 @@ namespace FreshEssentials
                 this.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 var frame = new AdvancedFrame();
                 if (i == 0)
-                    frame.Corners = RoundedCorners.left;
+                    frame.Corners = RoundedCorners.Left;
                 else if ((i + 1) == SegmentedButtons.Count)
-                    frame.Corners = RoundedCorners.right;
+                    frame.Corners = RoundedCorners.Right;
                 else
-                    frame.Corners = RoundedCorners.none;
+                    frame.Corners = RoundedCorners.None;
                     
                 frame.CornerRadius = CornerRadius;    
                 frame.OutlineColor = OnColor;

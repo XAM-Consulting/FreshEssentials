@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FreshEssentialSamples.AutoGridSample"
+	xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials">
+	<ContentPage.Content>
+		<fe:AutoGrid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="2" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			
+			<Label Text="Image that" fe:AutoGrid.AutoRow="Begin" Grid.ColumnSpan="5" VerticalTextAlignment="Center"/>
+			<BoxView HeightRequest="2" BackgroundColor="Black" fe:AutoGrid.AutoRow="Step" Grid.ColumnSpan="5" />
+			
+			<Label Text="If you have a Grid with 23 rows, and you want to insert a grid at Row=&quot;0&quot;"
+				fe:AutoGrid.AutoRow="Step" Grid.ColumnSpan="5" VerticalTextAlignment="Center" />
+			<BoxView HeightRequest="2" BackgroundColor="Black" fe:AutoGrid.AutoRow="Step" Grid.ColumnSpan="5" />
+			
+			<Label Text="Why not try this" fe:AutoGrid.AutoRow="Step" Grid.ColumnSpan="5"  VerticalTextAlignment="Center"/>
+			<BoxView HeightRequest="2" BackgroundColor="Black" fe:AutoGrid.AutoRow="Step" Grid.ColumnSpan="5" />
+			
+			<Frame fe:AutoGrid.AutoRow="Step"  Grid.ColumnSpan="5" BackgroundColor="Black" HasShadow="false" />
+			<Label Text="AutoColumn=&quot;Begin&quot;" TextColor="Yellow" fe:AutoGrid.AutoRow="Hold" fe:AutoGrid.AutoColumn="Begin" />
+			<BoxView WidthRequest="2" BackgroundColor="White" fe:AutoGrid.AutoRow="Hold" fe:AutoGrid.AutoColumn="Step"/>
+			<Label Text="AutoColumn=&quot;Step&quot;" TextColor="Green" fe:AutoGrid.AutoRow="Hold" fe:AutoGrid.AutoColumn="Step" />
+			<BoxView WidthRequest="2" BackgroundColor="White" fe:AutoGrid.AutoRow="Hold" fe:AutoGrid.AutoColumn="Step"/>
+			<Label Text="AutoColumn=&quot;Hold&quot;" TextColor="Red" fe:AutoGrid.AutoRow="Hold" fe:AutoGrid.AutoColumn="Step" />
+			
+		</fe:AutoGrid>
+	</ContentPage.Content>
+</ContentPage>

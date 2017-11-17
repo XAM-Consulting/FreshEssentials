@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FreshEssentialSamples.HomePage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Button Text="BindablePicker" Command="{Binding OpenPage}" CommandParameter="Picker" ></Button>
+
+            <Button Text="AdvancedFrame"  Command="{Binding OpenPage}" CommandParameter="Frame" ></Button>
+
+            <Button Text="SegmentedButtonGroup" Command="{Binding OpenPage}" CommandParameter="SegmentedButton" ></Button>
+
+            <Button Text="InverseBooleanConverter" Command="{Binding OpenPage}" CommandParameter="InverseBool" ></Button>
+
+            <Button Text="ListViewItemTappedAttached" Command="{Binding OpenPage}" CommandParameter="TappedAttached" ></Button>
+
+            <Button Text="TappedGestureAttached" Command="{Binding OpenPage}" CommandParameter="TappedGesture"  ></Button>
+
+			<Button Text="AutoGrid" Command="{Binding OpenPage}" CommandParameter="AutoGrid"  ></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

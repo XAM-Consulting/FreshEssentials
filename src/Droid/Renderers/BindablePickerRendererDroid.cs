@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using Android.App;
@@ -30,7 +31,7 @@ namespace FreshEssentials.Droid
             if (disposing && !_isDisposed)
             {
                 _isDisposed = true;
-                ((ObservableCollection<string>)Element.Items).CollectionChanged -= RowsCollectionChanged;
+                ((INotifyCollectionChanged)Element.Items).CollectionChanged -= RowsCollectionChanged;
             }
 
             base.Dispose(disposing);
@@ -39,11 +40,11 @@ namespace FreshEssentials.Droid
         protected override void OnElementChanged(ElementChangedEventArgs<BindablePicker> e)
         {
             if (e.OldElement != null)
-                ((ObservableCollection<string>)e.OldElement.Items).CollectionChanged -= RowsCollectionChanged;
+                ((INotifyCollectionChanged)e.OldElement.Items).CollectionChanged -= RowsCollectionChanged;
 
             if (e.NewElement != null)
             {
-                ((ObservableCollection<string>)e.NewElement.Items).CollectionChanged += RowsCollectionChanged;
+                ((INotifyCollectionChanged)e.NewElement.Items).CollectionChanged += RowsCollectionChanged;
                 if (Control == null)
                 {
                     var button = new AButton(Context) { Focusable = false, Clickable = true, Tag = this, Text = e.NewElement.Title };
@@ -111,7 +112,7 @@ namespace FreshEssentials.Droid
             (_dialog = builder.Create()).Show();
         }
 
-        void RowsCollectionChanged(object sender, EventArgs e)
+        void RowsCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             UpdatePicker();
         }

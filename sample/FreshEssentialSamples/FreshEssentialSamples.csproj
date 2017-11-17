@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{62BFE99F-B28D-409F-8A6E-989C122C40CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FreshEssentialSamples</RootNamespace>
+    <AssemblyName>FreshEssentialSamples</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="FreshEssentialSamples.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BindablePickerExample.xaml.cs">
+      <DependentUpon>BindablePickerExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedFrameSample.xaml.cs">
+      <DependentUpon>AdvancedFrameSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentedButtonGroupSample.xaml.cs">
+      <DependentUpon>SegmentedButtonGroupSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InverseBooleanSample.xaml.cs">
+      <DependentUpon>InverseBooleanSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemTappedTappedAttachedSample.xaml.cs">
+      <DependentUpon>ItemTappedTappedAttachedSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TappedGestureAttachedSample.xaml.cs">
+      <DependentUpon>TappedGestureAttachedSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Car.cs" />
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindableViewModel.cs" />
+    <Compile Include="AutoGridSample.xaml.cs">
+      <DependentUpon>AutoGridSample.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" /> 
+  <ItemGroup>
+    <EmbeddedResource Include="BindablePickerExample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>BindablePickerExample.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvancedFrameSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>AdvancedFrameSample.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SegmentedButtonGroupSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>SegmentedButtonGroupSample.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InverseBooleanSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>InverseBooleanSample.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemTappedTappedAttachedSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>ItemTappedTappedAttachedSample.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TappedGestureAttachedSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>TappedGestureAttachedSample.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>HomePage.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoGridSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FreshEssentials\FreshEssentials.csproj">
+      <Project>{99D84C84-D9FF-49AA-8AF0-3D7FD4E5C616}</Project>
+      <Name>FreshEssentials</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
