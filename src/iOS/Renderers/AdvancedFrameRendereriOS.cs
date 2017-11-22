@@ -8,7 +8,7 @@ using UIKit;
 [assembly: ExportRenderer(typeof(AdvancedFrame), typeof(FreshEssentials.iOS.AdvancedFrameRendereriOS))]
 namespace FreshEssentials.iOS
 {
-    public class AdvancedFrameRendereriOS : FrameRenderer
+    public class AdvancedFrameRendereriOS : VisualElementRenderer<AdvancedFrame>
     {
         protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
