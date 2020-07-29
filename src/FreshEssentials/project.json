@@ -1,8 +1,8 @@
 ﻿{
   "dependencies": {
-    "Xamarin.Forms": "2.4.0.74863",
-    "NETStandard.Library": "1.6.0",
-    "Microsoft.NETCore.Portable.Compatibility": "1.0.1"
+    "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
+    "NETStandard.Library": "2.0.3",
+    "Xamarin.Forms": "3.6.0.344457"
   },
   "frameworks": {
     "netstandard1.5": {}
